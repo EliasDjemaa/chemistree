@@ -1,0 +1,221 @@
+.nav-container {
+  position: sticky;
+  font-size: 14px;
+  background-color: white;
+}
+
+.navbar {
+    justify-content: space-between;
+    padding: 17px 200px 17px 200px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    
+    }
+    
+.update-bar {
+    display: flex;
+    padding: 12px 200px 12px 200px;
+    background-color: #D9FC50;
+    font-size: 16px;
+}
+
+    .update-bar:hover {
+      display: flex;
+      background-color: #b1cb42;
+    }
+    
+    .logo-inter {
+      color: #3F4138;
+    
+      font-family: Inter;
+      font-size: 22px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      word-spacing: -0.5ex;
+    }
+    
+
+    
+    
+    
+    .navbar-left {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    
+      
+    
+    }
+    
+    .navbar-right {
+      justify-content: space-between;
+    }
+    
+    
+    
+    #navbar-menu {
+      display: flex;
+      align-items: center;
+      margin: 10px;
+      padding: 0px;
+    
+      justify-content: space-between;
+    }
+    
+    #menuSPC {
+      
+      text-transform: uppercase;
+      color: #3F4138;
+      font-family: Inter;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      letter-spacing: 2px;
+      margin: 5px 40px 5px 10px;
+    
+    
+    
+     
+    }
+    
+    #menuSPC:hover {
+      color: #D9FC50;
+     
+    }
+    
+    #log-in {
+      text-transform: uppercase;
+      color: #3F4138;
+      font-family: Inter;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      letter-spacing: 2px;
+    
+      border-radius: 4px;
+      border: 1px solid #3F4138;
+      background: #D9FC50;
+      padding: 4px 12px;
+    }
+    
+    #log-in:hover {
+      text-transform: uppercase;
+      color: #D9FC50;
+      font-family: Inter;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+    
+      border-radius: 4px;
+      border: 1px solid #D9FC50;
+      background: #3F4138;
+      padding: 4px 12px;
+    }
+
+#mobile i {
+    color: #3F4138;
+}
+
+@media screen and (max-width: 920px) {
+
+
+    
+
+    .update-bar {
+        display: flex;
+        padding: 10px 10px 10px 10px;
+        background-color: #D9FC50;
+        position: sticky; /* Set the position to  */
+        top: 0; /* Position it at the top of the viewport */
+        left: 0; /* Position it at the left of the viewport */
+        right: 0; /* Position it at the right of the viewport */
+        z-index: 100; /* Ensure it appears above other elements */
+        font-size: 12px;
+      }
+    .navbar {
+        justify-content: space-between;
+        padding: 0px 40px 0px 40px;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky; /* Set the position to  */
+        top: 37px;
+        left: 0; /* Position it at the left of the viewport */
+        right: 0; /* Position it at the right of the viewport */
+        z-index: 100; /* Ensure it appears above other elements */
+        background-color: white;
+
+    }
+    
+    #navbar-menu {
+        
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        position: fixed;
+        top: 69px;
+        right: -330px;
+        width: 300px;
+        height: 100vh;
+        background-color: #3F4138;
+        box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
+        padding: 40px 0 0 10px;
+    }
+
+
+
+    .logo-inter {
+      color: #3F4138;
+      margin: 10px;
+      font-family: Inter;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      word-spacing: -0.5ex;
+    }
+
+    #navbar-menu.active {
+        right:0px;
+        width: 100%;
+        align-items: center;
+        font-size: 25px;
+    }
+    
+    #menuSPC {
+      
+        text-transform: uppercase;
+        color: white;
+        font-family: Inter;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        letter-spacing: 2px;
+        margin-bottom: 40px;
+    }
+
+    #menuSPC:hover {
+        color: #D9FC50;
+       
+    }
+
+    #mobile  {
+        display: block;
+
+    }
+}
+
+
+/* Additional CSS to hide icons on desktop */
+@media screen and (min-width: 920px) {
+    #mobile i {
+      display: none; /* Hide the icons within #mobile div on desktop devices */
+    }
+  }
