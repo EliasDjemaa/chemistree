@@ -17,7 +17,7 @@ class Navigation extends Component {
 
     return (
       <div className="nav-container">
-        <a href="https://github.com/EliasDjemaa">
+        <a href="https://github.com/EliasDjemaa/chemistree" target="_blank">
           <div className="update-bar">
             -> chemistree is a project designed and developed by Elias Djemaa
           </div>

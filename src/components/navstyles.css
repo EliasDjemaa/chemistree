@@ -99,22 +99,14 @@
       border-radius: 4px;
       border: 1px solid #3F4138;
       background: #D9FC50;
-      padding: 4px 12px;
+      padding: 10px 22px;
     }
     
     #log-in:hover {
-      text-transform: uppercase;
       color: #D9FC50;
-      font-family: Inter;
-      font-size: 12px;
-      font-style: normal;
-      font-weight: 500;
-      line-height: normal;
-    
-      border-radius: 4px;
       border: 1px solid #D9FC50;
       background: #3F4138;
-      padding: 4px 12px;
+
     }
 
 #mobile i {
