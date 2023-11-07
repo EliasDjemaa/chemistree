@@ -1,11 +1,22 @@
+.content-container {
+    display: flex;
+    flex-direction: row;
+}
 
-
-.left-login-form {
+.left-content {
     width: 40%;
+    outline-style: dashed;
+    align-items: center;
+    padding: 40px 0 0 200px;
+}
+
+.right-login-form {
+    width: 60%;
     outline-style: dashed;
 }
 
-.right-login-content {
-    width: 60%;
-    outline-style: dashed;
+@media screen and (max-width: 920px) {
+    .content-container {
+        flex-direction: column;
+    }
 }
