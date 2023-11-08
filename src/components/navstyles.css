@@ -1,7 +1,7 @@
 .nav-container {
   position: sticky;
   font-size: 14px;
-  background-color: white;
+  background-color: #E0EBE5;
 }
 
 .navbar {
@@ -9,20 +9,20 @@
     padding: 17px 200px 17px 200px;
     justify-content: space-between;
     align-items: center;
-    background-color: white;
+    background-color: #E0EBE5;
     
     }
     
 .update-bar {
     display: flex;
     padding: 12px 200px 12px 200px;
-    background-color: #D9FC50;
+    background-color: #FF7455;
     font-size: 16px;
 }
 
     .update-bar:hover {
       display: flex;
-      background-color: #b1cb42;
+      background-color: #A0695C;
     }
     
     .logo-inter {
@@ -82,13 +82,14 @@
     }
     
     #menuSPC:hover {
-      color: #D9FC50;
+      color: #47534D;
+      font-weight: 1000;
      
     }
     
     #log-in {
       text-transform: uppercase;
-      color: #3F4138;
+      color: #E0EBE5;
       font-family: Inter;
       font-size: 12px;
       font-style: normal;
@@ -96,16 +97,15 @@
       line-height: normal;
       letter-spacing: 2px;
     
-      border-radius: 4px;
-      border: 1px solid #3F4138;
-      background: #D9FC50;
+
+      background: #131E18;
       padding: 10px 22px;
+      border-radius: 29.5px;
     }
     
     #log-in:hover {
-      color: #D9FC50;
-      border: 1px solid #D9FC50;
-      background: #3F4138;
+      color: E0EBE5;
+      background: #47534D;
 
     }
 
@@ -121,7 +121,6 @@
     .update-bar {
         display: flex;
         padding: 10px 10px 10px 10px;
-        background-color: #D9FC50;
         position: sticky; /* Set the position to  */
         top: 0; /* Position it at the top of the viewport */
         left: 0; /* Position it at the left of the viewport */
@@ -139,7 +138,6 @@
         left: 0; /* Position it at the left of the viewport */
         right: 0; /* Position it at the right of the viewport */
         z-index: 100; /* Ensure it appears above other elements */
-        background-color: white;
 
     }
     

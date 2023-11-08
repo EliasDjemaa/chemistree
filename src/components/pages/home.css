@@ -1,14 +1,166 @@
+body {
+    background: #E0EBE5;
+}
 
+.main-container {
 
+    margin-left: 200px;
+    margin-right:200px;
 
+}
 
+#hero {
+    padding-top: 40px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    
+}
+
+#hero-left {
+    width: 40%;
+}
+
+#hero-right {
+    width: 53%;
+
+}
+
+#hero-header {
+    height: 151px;
+    color: #141F19;
+
+    font-size: 38px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 50px; /* 116.667% */
+    letter-spacing: 1.2px;
+
+}
+
+#sub-head {
+    margin-top: 30px;
+    margin-left: 300px;
+    width: 440px;
+    color: #131E18;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 1.25px;
+}
+
+.sub-content {
+    background: #FFF;
+    width: 100%;
+    justify-content: space-between;
+
+}
+
+#sub-left {
+    width: 30%;
+    height: 201px;
+    margin-left: 200px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    position: absolute;
+    top: 340px; 
+    left: 80px;
+
+    border-radius: 8px;
+    border: 1px solid #131E18;
+    background: #FFF;
+    box-shadow: 8px 15px 6px 0px rgba(0, 0, 0, 0.10);
+}
+
+#sub-right {
+    width: 30%;
+    height: 201px;
+    margin-left: 200px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    position: absolute;
+    top: 340px;
+    left: 730px; 
+
+    border-radius: 8px;
+    border: 1px solid #131E18;
+    background: #FFF;
+    box-shadow: 8px 15px 6px 0px rgba(0, 0, 0, 0.10);
+}
+
+.sub-header {
+    color: #3F4138;
+    font-family: Inter;
+    font-size: 27px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 1px;
+}
+
+.dividerL {
+    margin-top: 200px;
+    width: 1500px;
+}
 /* phone + tab */ 
 @media screen and (max-width: 920px) {
 
 }
 
 
-/* desktop */
-@media screen and (min-width: 920px) {
+/* Media query for smaller screens, e.g., tablets or mobile */
+@media screen and (max-width: 920px) {
+    .main-container {
+
+        margin-left: 40px;
+        margin-right: 40px;
     
+    }
+    
+    #hero {
+        flex-direction: column;
+    }
+
+    #hero-left,
+    #hero-right {
+        width: 100%;
+    }
+
+    #sub-head {
+        margin-left: 0;
+    }
+
+    #sub-left,
+    #sub-right {
+        width: 100%;
+        position: relative;
+        top: 0;
+        left: 0;
+        margin-left: 0;
+        margin-bottom: 20px;
+        padding-left: 20px;
+        text-align: center; /* Center the content */
+    }
+
+    #sub-left {
+        top: 0;
+    }
+
+    #sub-right {
+        top: 0;
+    }
+
+    .dividerL {
+        width: 100%;
+        margin-top: 20px;
+    }
+}
+
+/* Desktop styles */
+@media screen and (min-width: 920px) {
+    /* Add your desktop-specific styles here if needed */
 }
