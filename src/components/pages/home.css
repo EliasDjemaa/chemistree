@@ -28,9 +28,9 @@ body {
 }
 
 #hero-header {
-    height: 151px;
-    color: #141F19;
 
+    color: #141F19;
+    margin-bottom: 110px;
     font-size: 38px;
     font-family: Inter;
     font-style: normal;
@@ -123,15 +123,24 @@ body {
     
     #hero {
         flex-direction: column;
+        
+    }
+
+    #hero-header {
+        margin-bottom: 0;
+        padding-bottom: 0;
     }
 
     #hero-left,
     #hero-right {
         width: 100%;
+
+
     }
 
     #sub-head {
         margin-left: 0;
+        margin-top: 10;
     }
 
     #sub-left,
