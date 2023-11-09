@@ -1,5 +1,15 @@
 body {
-    background: #E0EBE5;
+    background: #fff;
+}
+
+.bkg{
+    height: 350px;
+    width: 100%;
+    position: sticky;
+    background-color: #E0EBE5;
+    background-size: cover; /* Adjust as needed */
+    background-position: center 1000px;
+
 }
 
 .main-container {
@@ -14,16 +24,16 @@ body {
     width: 100%;
     display: flex;
     flex-direction: row;
-    position: relative;
+
     
 }
 
 #hero-left {
-    width: 40%;
+
 }
 
 #hero-right {
-    width: 53%;
+
 
 }
 
@@ -42,8 +52,7 @@ body {
 
 #sub-head {
     margin-top: 30px;
-    margin-left: 300px;
-    width: 440px;
+    margin-left: 200px;
     color: #131E18;
     font-family: Inter;
     font-size: 16px;
@@ -54,22 +63,22 @@ body {
 }
 
 .sub-content {
-    background: #FFF;
     width: 100%;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: center; /* Add this line to center the children vertically */
+    display: flex;
+    flex-direction: row;
+
 
 }
 
 #sub-left {
-    width: 30%;
-    height: 201px;
-    margin-left: 200px;
+    float: left;
+    width: 450px;
+    height: 160px;
     margin-bottom: 20px;
     padding-left: 20px;
-    position: absolute;
-    top: 340px; 
-    left: 80px;
-
+    padding-right: 20px;
     border-radius: 8px;
     border: 1px solid #131E18;
     background: #FFF;
@@ -77,15 +86,12 @@ body {
 }
 
 #sub-right {
-    width: 30%;
-    height: 201px;
-    margin-left: 200px;
+    float: left;
+    width: 450px;
+    height: 160px;
     margin-bottom: 20px;
     padding-left: 20px;
-    position: absolute;
-    top: 340px;
-    left: 730px; 
-
+    padding-right: 20px;
     border-radius: 8px;
     border: 1px solid #131E18;
     background: #FFF;
@@ -136,6 +142,10 @@ body {
         width: 100%;
 
 
+    }
+    
+    .sub-content {
+        flex-direction: column;
     }
 
     #sub-head {
