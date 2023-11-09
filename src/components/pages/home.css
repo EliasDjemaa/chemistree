@@ -3,7 +3,7 @@ body {
 }
 
 .bkg{
-    height: 350px;
+    height: 300px;
     width: 100%;
     position: sticky;
     background-color: #E0EBE5;
@@ -24,23 +24,20 @@ body {
     width: 100%;
     display: flex;
     flex-direction: row;
-
-    
 }
 
 #hero-left {
-
+    width: 1200px;
 }
 
 #hero-right {
-
-
+    float: right;
 }
 
 #hero-header {
 
     color: #141F19;
-    margin-bottom: 110px;
+    margin-bottom: 50px;
     font-size: 38px;
     font-family: Inter;
     font-style: normal;
@@ -52,7 +49,7 @@ body {
 
 #sub-head {
     margin-top: 30px;
-    margin-left: 200px;
+
     color: #131E18;
     font-family: Inter;
     font-size: 16px;
@@ -112,14 +109,23 @@ body {
     margin-top: 200px;
     width: 1500px;
 }
-/* phone + tab */ 
-@media screen and (max-width: 920px) {
 
+@media (min-width: 1401px) and (max-width: 1550px) {
+            
+        #hero-header {
+
+        width: 500px;
+
+        }
+
+        #sub-head {
+
+        }
 }
 
 
 /* Media query for smaller screens, e.g., tablets or mobile */
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 1400px) {
     .main-container {
 
         margin-left: 40px;
@@ -180,6 +186,6 @@ body {
 }
 
 /* Desktop styles */
-@media screen and (min-width: 920px) {
+@media screen and (min-width: 1020px) {
     /* Add your desktop-specific styles here if needed */
 }
