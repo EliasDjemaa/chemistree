@@ -126,6 +126,10 @@ body {
 
 /* Media query for smaller screens, e.g., tablets or mobile */
 @media screen and (max-width: 1400px) {
+    .bkg{
+        height: 465px;
+    }
+
     .main-container {
 
         margin-left: 40px;
