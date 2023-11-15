@@ -1,16 +1,25 @@
+
+
 .content-container {
     display: flex;
     flex-direction: row;
+    padding: 17px 200px 17px 200px;
+    border-style: dashed;
+    width: 100%;
 }
 
-.left-content {
-    width: 40%;
+#right-content {
+    justify-content: space-between;
     align-items: center;
-    padding: 40px 0 0 200px;
+    border-style: dashed;
+
 }
 
-.right-login-form {
-    width: 60%;
+#left-login-form {
+    justify-content: space-between;
+    align-items: center;
+    border-style: dashed;
+
 }
 
 @media screen and (max-width: 920px) {
