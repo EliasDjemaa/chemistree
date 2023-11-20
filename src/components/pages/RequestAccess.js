@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navigation from '../Navigation.js';
-import { useState } from 'react';
 
 // Define the RequestAccess functional component
 export const RequestAccess = () => {
@@ -10,9 +9,20 @@ export const RequestAccess = () => {
   const [userType, setUserType] = useState('patient'); // Default to 'patient'
   const [error, setError] = useState('');
 
-  // Handle sign-up logic
+  // Function to handle sign-up logic
   const handleSignUp = async () => {
     try {
+      // Client-side validation
+      if (!validateEmail(email)) {
+        setError('Please enter a valid email address');
+        return;
+      }
+
+      if (!validatePassword(password)) {
+        setError('Password must include one capital letter and one number');
+        return;
+      }
+
       // Make an API call to create a new user
       const response = await fetch('http://127.0.0.1:5000/api/users', {
         method: 'POST',
@@ -44,6 +54,20 @@ export const RequestAccess = () => {
       console.error('Error during signup:', error);
       setError('An error occurred during signup');
     }
+  };
+
+  // Function to validate email format
+  const validateEmail = (email) => {
+    // Use a simple email validation regex
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  // Function to validate password format (one capital letter and one number)
+  const validatePassword = (password) => {
+    // Use a regex to check for at least one capital letter and one number
+    const passwordRegex = /^(?=.*[A-Z])(?=.*\d).+$/;
+    return passwordRegex.test(password);
   };
 
   // JSX representing the component's UI

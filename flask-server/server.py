@@ -57,8 +57,8 @@ def authenticate_user():
         if not user.token:
             user.generate_token()
             db.session.commit()
-        # Return the token in the response
-        return jsonify({'token': user.token}), 200
+        # Return the token and role in the response
+        return jsonify({'token': user.token, 'role': 'patient' if user.is_patient else 'caregiver'}), 200
     else:
         # Log failed login attempt and return an error response
         print(f"Failed login attempt for email: {user_email}")
