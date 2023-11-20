@@ -1,6 +1,9 @@
 # Chemistree
 
-This project is a medicine journal web application
+This project is a synptom journal web application, functionalities include:
+
+- symptom journaling
+- medication reminders
 
 ## Available Scripts
 
