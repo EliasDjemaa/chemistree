@@ -33,7 +33,8 @@ export const Login = () => {
       if (response.ok) {
         localStorage.setItem('authToken', data.token);
         localStorage.setItem('userRole', data.role);
-
+        localStorage.setItem('userFirstName', data.firstName);
+        
         console.log('Login successful!', data);
 
         // Redirect based on user role

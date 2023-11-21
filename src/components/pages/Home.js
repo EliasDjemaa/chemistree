@@ -1,5 +1,6 @@
 import React from 'react';
 import Navigation from '../Navigation.js';
+
 import './home.css';
 
 export const Home = () => {

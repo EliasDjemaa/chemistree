@@ -20,17 +20,17 @@ db = SQLAlchemy(app)
 
 # Define a User class that represents the 'users' table in the database
 class User(db.Model):
-    __tablename__ = 'users'  # Specify the table name
+    __tablename__ = 'users'
 
-    # Define columns for the 'users' table
-    user_id = db.Column(db.Integer, primary_key=True)  # Primary key column
-    email = db.Column(db.String(255), unique=True, nullable=False)  # Email column with unique constraint
-    hashed_password = db.Column(db.String(120), nullable=False)  # Hashed password column
-    token = db.Column(db.String(120), nullable=True)  # Token column, allows NULL
-    is_patient = db.Column(db.Boolean, default=True, nullable=False)  # Boolean column, default to True
-    is_caregiver = db.Column(db.Boolean, default=False, nullable=False)  # Boolean column, default to False
+    user_id = db.Column(db.Integer, primary_key=True)
+    email = db.Column(db.String(255), unique=True, nullable=False)
+    hashed_password = db.Column(db.String(120), nullable=False)
+    token = db.Column(db.String(120), nullable=True)
+    is_patient = db.Column(db.Boolean, default=True, nullable=False)
+    is_caregiver = db.Column(db.Boolean, default=False, nullable=False)
+    firstName = db.Column(db.String(50), nullable=False)  # Add first name column
+    lastName = db.Column(db.String(50), nullable=False)   # Add last name column
 
-    # Define methods for setting password, checking password, and generating token
     def set_password(self, password):
         self.hashed_password = generate_password_hash(password)
 
@@ -58,7 +58,11 @@ def authenticate_user():
             user.generate_token()
             db.session.commit()
         # Return the token and role in the response
-        return jsonify({'token': user.token, 'role': 'patient' if user.is_patient else 'caregiver'}), 200
+        return jsonify({
+        'token': user.token,
+        'role': 'patient' if user.is_patient else 'caregiver',
+        'firstName': user.firstName, 
+    }), 200
     else:
         # Log failed login attempt and return an error response
         print(f"Failed login attempt for email: {user_email}")
@@ -67,32 +71,34 @@ def authenticate_user():
 # Define an endpoint for creating a new user
 @app.route('/api/users', methods=['POST'])
 def create_user():
-    # Get JSON data from the request
     data = request.get_json()
     email = data.get('email')
     password = data.get('password')
     is_patient = data.get('is_patient')
     is_caregiver = data.get('is_caregiver')
+    firstName = data.get('firstName')  # Retrieve first name from the request
+    lastName = data.get('lastName')    # Retrieve last name from the request
 
-    # Check if email and password are provided
-    if not email or not password:
-        return jsonify({'error': 'Email and password are required'}), 400
+    if not email or not password or not firstName or not lastName:
+        return jsonify({'error': 'Email, password, first name, and last name are required'}), 400
 
-    # Check if the user with the same email already exists
     existing_user = User.query.filter_by(email=email).first()
     if existing_user:
         return jsonify({'error': 'Email already exists'}), 400
 
-    # Create a new user instance and set password, generate token
-    new_user = User(email=email, is_patient=is_patient, is_caregiver=is_caregiver)
+    new_user = User(
+        email=email,
+        is_patient=is_patient,
+        is_caregiver=is_caregiver,
+        firstName=firstName,  # Set first name
+        lastName=lastName,    # Set last name
+    )
     new_user.set_password(password)
     new_user.generate_token()
 
-    # Add the new user to the database and commit the transaction
     db.session.add(new_user)
     db.session.commit()
 
-    # Return success message and the user's token in the response
     return jsonify({'message': 'User created successfully', 'token': new_user.token}), 201
 
 # Run the Flask application if the script is executed directly

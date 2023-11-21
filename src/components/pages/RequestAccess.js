@@ -8,6 +8,8 @@ export const RequestAccess = () => {
   const [password, setPassword] = useState('');
   const [userType, setUserType] = useState('patient'); // Default to 'patient'
   const [error, setError] = useState('');
+  const [firstName, setFirstName] = useState(''); // Add first name state
+  const [lastName, setLastName] = useState('');   // Add last name state
 
   // Function to handle sign-up logic
   const handleSignUp = async () => {
@@ -23,6 +25,12 @@ export const RequestAccess = () => {
         return;
       }
 
+      // Check if first name and last name are provided
+      if (!firstName || !lastName) {
+        setError('First name and last name are required');
+        return;
+      }
+
       // Make an API call to create a new user
       const response = await fetch('http://127.0.0.1:5000/api/users', {
         method: 'POST',
@@ -33,6 +41,8 @@ export const RequestAccess = () => {
         body: JSON.stringify({
           email,
           password,
+          firstName, 
+          lastName,   
           // Convert userType to boolean values
           is_patient: userType === 'patient',
           is_caregiver: userType === 'caregiver',
@@ -86,6 +96,18 @@ export const RequestAccess = () => {
       <label>
         Password:
         <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+      </label>
+      <br />
+      {/* Input field for first name */}
+      <label>
+        First Name:
+        <input type="text" value={firstName} onChange={(e) => setFirstName(e.target.value)} />
+      </label>
+      <br />
+      {/* Input field for last name */}
+      <label>
+        Last Name:
+        <input type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} />
       </label>
       <br />
       {/* Dropdown for selecting user type */}

@@ -1,0 +1,38 @@
+/* LeftSidebar.css */
+.left-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 200px;
+  background-color: #E0EBE5;
+  padding-top: 20px; /* Adjust as needed */
+  padding-left: 20px;
+  color: #141F19;
+  overflow-y: auto; /* Enable vertical scroll */
+}
+
+.left-sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.left-sidebar li {
+  padding: 10px;
+}
+
+.left-sidebar a {
+  color: #141F19;
+  text-decoration: none;
+}
+
+/* Logo Styles */
+.logo-inter {
+  color: #3F4138;
+  font-family: Inter;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  word-spacing: -0.5ex;
+}
