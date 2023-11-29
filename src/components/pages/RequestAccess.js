@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import Navigation from '../Navigation.js';
+import { useNavigate  } from 'react-router-dom';
+import './RequestAccess.css';
 
 // Define the RequestAccess functional component
 export const RequestAccess = () => {
@@ -10,6 +12,9 @@ export const RequestAccess = () => {
   const [error, setError] = useState('');
   const [firstName, setFirstName] = useState(''); // Add first name state
   const [lastName, setLastName] = useState('');   // Add last name state
+
+  const navigate = useNavigate();
+
 
   // Function to handle sign-up logic
   const handleSignUp = async () => {
@@ -49,12 +54,17 @@ export const RequestAccess = () => {
         }),
       });
 
-      // Parse the response data as JSON
-      const data = await response.json();
+        // Parse the response data as JSON
+        const data = await response.json();
 
       // Check if the API call was successful
       if (response.ok) {
         console.log('User created successfully!', data);
+
+        // Show a pop-up notification upon successful account creation
+        window.alert('Your account has been successfully created!');
+
+          navigate('/login');
       } else {
         // Set error state if there was an issue creating the user
         setError(data.error || 'Error creating user');
@@ -64,7 +74,7 @@ export const RequestAccess = () => {
       console.error('Error during signup:', error);
       setError('An error occurred during signup');
     }
-  };
+};
 
   // Function to validate email format
   const validateEmail = (email) => {
@@ -80,51 +90,75 @@ export const RequestAccess = () => {
     return passwordRegex.test(password);
   };
 
-  // JSX representing the component's UI
-  return (
-    <div>
-      {/* Render the Navigation component */}
-      <Navigation></Navigation>
-      <h2>Sign Up</h2>
+// ... (your existing code)
+
+// JSX representing the component's UI
+return (
+  <div>
+    {/* Render the Navigation component */}
+    <Navigation></Navigation>
+    <div className='reqAccess-container'>
+      <h2>Request Access</h2>
+      <p>Welcome to chemistree - let's create your account.</p>
+
+      {/* Input field for first name and last name */}
+      <div className='flex-container'>
+        <div className='first-name'>
+          <label>
+            First Name:
+            <br />
+            <input type="text" value={firstName} onChange={(e) => setFirstName(e.target.value)} />
+          </label>
+        </div>
+        <div className='last-name'>
+          <label>
+            Last Name:
+            <br />
+            <input type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} />
+          </label>
+        </div>
+      </div>
+
       {/* Input field for email */}
-      <label>
-        Email:
-        <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} />
-      </label>
-      <br />
+      <div className='flex-container'>
+        <label>
+          Email:
+          <br />
+          <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} className='email-input'/>
+        </label>
+      </div>
+
       {/* Input field for password */}
-      <label>
-        Password:
-        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-      </label>
-      <br />
-      {/* Input field for first name */}
-      <label>
-        First Name:
-        <input type="text" value={firstName} onChange={(e) => setFirstName(e.target.value)} />
-      </label>
-      <br />
-      {/* Input field for last name */}
-      <label>
-        Last Name:
-        <input type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} />
-      </label>
-      <br />
+      <div className='flex-container'>
+        <label>
+          Password:
+          <br />
+          <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className='password-input'/>
+        </label>
+      </div>
+
       {/* Dropdown for selecting user type */}
-      <label>
-        User Type:
-        <select value={userType} onChange={(e) => setUserType(e.target.value)}>
-          <option value="patient">Patient</option>
-          <option value="caregiver">Caregiver</option>
-        </select>
-      </label>
-      <br />
+      <div className='flex-container'>
+        <label>
+          User Type:
+          <br />
+          <select value={userType} onChange={(e) => setUserType(e.target.value)} className='usert-input'>
+            <option value="patient">Patient</option>
+            <option value="caregiver">Caregiver</option>
+          </select>
+        </label>
+      </div>
+
       {/* Button to trigger the handleSignUp function */}
-      <button type="button" onClick={handleSignUp}>
-        Sign Up
-      </button>
+      <div className='flex-container'>
+        <button type="button" onClick={handleSignUp} className='btn-input'>
+          Request Access
+        </button>
+      </div>
+
       {/* Display an error message if there is an error */}
       {error && <p style={{ color: 'red' }}>{error}</p>}
     </div>
-  );
+  </div>
+);
 };

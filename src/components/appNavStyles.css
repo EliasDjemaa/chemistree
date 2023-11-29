@@ -1,4 +1,5 @@
-/* LeftSidebar.css */
+/* appNavStyles.css */
+
 .left-sidebar {
   position: fixed;
   top: 0;
@@ -6,10 +7,12 @@
   height: 100%;
   width: 200px;
   background-color: #E0EBE5;
-  padding-top: 20px; /* Adjust as needed */
+  padding-top: 20px;
   padding-left: 20px;
   color: #141F19;
-  overflow-y: auto; /* Enable vertical scroll */
+  overflow-y: auto;
+  border-radius: 8px;
+  border: 2px solid white;
 }
 
 .left-sidebar ul {
@@ -21,18 +24,72 @@
   padding: 10px;
 }
 
+.nav-item:hover {
+  color: #FF7455;
+}
+
 .left-sidebar a {
   color: #141F19;
   text-decoration: none;
 }
 
-/* Logo Styles */
-.logo-inter {
+.logo-inter-app {
   color: #3F4138;
   font-family: Inter;
   font-size: 22px;
-  font-style: normal;
   font-weight: 500;
   line-height: normal;
   word-spacing: -0.5ex;
+}
+
+.logo-container {
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+}
+
+.nav-item svg {
+  margin-right: 8px;
+}
+
+/* Media Query for screens smaller than 600px (adjust as needed) */
+@media only screen and (max-width: 600px) {
+  .left-sidebar {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    margin-left: 0;
+    height: 8%;
+    top: auto;
+  }
+
+  .logo-container {
+    width: auto;
+    border: 0px;
+  }
+
+  .logo-inter-app {
+    display: none;
+  }
+
+  .left-sidebar ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: 60px;
+    margin-left: 30px;
+  }
+
+  .left-sidebar li {
+    margin-right: 0px;
+  }
+
+  .nav-text {
+    display: none;
+  }
 }

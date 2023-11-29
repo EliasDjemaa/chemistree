@@ -59,29 +59,30 @@ export const Login = () => {
       <Navigation />
       <div className='content-container'>
         <div id='left-login-form'>
-          <h4>Welcome to immediate, and reliable care.</h4>
-
           <h1>Welcome back</h1>
+          <p>The home of immediate, and reliable care.</p>
           <p>Dont have an account? <NavLink to="/RequestAccess"> Request access</NavLink></p>
-          <form>
+          <form className='login-form'>
             <label>
               Email:
-              <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} />
+              <br />
+              <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} className='email-input'/>
             </label>
             <br />
             <label>
               Password:
-              <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+              <br />
+              <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className='password-input'/>
             </label>
             <br />
-            <button type="button" onClick={handleLogin}>
+            <button type="button" onClick={handleLogin} className='login-btn'>
               Login
+              <br />
             </button>
             {error && <p style={{ color: 'red' }}>{error}</p>}
           </form>
         </div>
 
-        <div id='right-content'></div>
       </div>
     </div>
   );

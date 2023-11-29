@@ -34,9 +34,6 @@ class Navigation extends Component {
                 id="navbar-menu"
                 className={this.state.clicked ? "navbar-menu active" : "navbar-menu"}
               >
-                <NavLink style={navLinkStyles} to="/Solutions" id="menuSPC">
-                  SOLUTIONS
-                </NavLink>
                 <NavLink style={navLinkStyles} to="/RequestAccess" id="menuSPC">
                   REQUEST ACCESS
                 </NavLink>

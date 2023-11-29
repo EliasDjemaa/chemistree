@@ -1,5 +1,7 @@
 import React from 'react';
 import Navigation from '../Navigation.js';
+import carerImage from '../../imgs/carer.jpeg';
+import patientsImage from '../../imgs/patients.jpeg';
 
 import './home.css';
 
@@ -25,8 +27,7 @@ export const Home = () => {
             <div id='hero-right'>
               {/* Subheader */}
               <p id='sub-head'>
-                Whether you're a caregiver or patient, receive medication reminders,
-                a summary of medical symptoms, and the current patient condition.
+              Together, we can improve access to healthcare and deepen its impact for millions of in or out patients.
               </p>
             </div>
           </div>
@@ -34,41 +35,46 @@ export const Home = () => {
           {/* Sub-content section */}
           <div className='sub-content'>
             {/* Left sub-content */}
-            <div id='sub-left'>
+            <div className='sub-content-box'>
               <h3 className='sub-header'>
                 I’m a caregiver
               </h3>
               {/* Description for caregivers */}
-              <p>
+              <p className='sub-des'>
                 Keep track of patient health metrics and share with the rest of the
                 care team.
               </p>
+              <img src={carerImage} alt="Carer" />
             </div>
 
             {/* Right sub-content */}
-            <div id='sub-right'>
+            <div className='sub-content-box'>
               <h3 className='sub-header'>
                 I’m a patient
               </h3>
               {/* Description for caregivers (duplicate section; needs updating) */}
-              <p>
-                Keep records of your symptoms and view symptoms 
+              <p className='sub-des'>
+                Update your careteam on how your feeling with symptom journaling and recieve medication reminders.
               </p>
+              <img src={patientsImage} alt="Patient" />
             </div>
           </div>
 
-          {/* Additional content */}
-          <p>
-            Lorem ipsum, Lorem Ipsum is simply dummy text of the printing and
-            typesetting industry. Lorem Ipsum has been the industry's standard dummy
-            text ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not only
-            five centuries but also the leap into electronic typesetting, remaining
-            essentially unchanged. It was popularized in the 1960s with the release
-            of Letraset sheets containing Lorem Ipsum passages and more recently
-            with desktop publishing software like Aldus PageMaker, including versions
-            of Lorem Ipsum.
-          </p>
+        <div className='dividerL'></div>
+
+        <div className='content-div'>
+          {/* Header column */}
+          <div className='header-column'>
+            <h1 className='content-header'>A platform designed for simpler, smarter and more rewarding care</h1>
+          </div>
+
+          {/* Content column */}
+          <div className='content-column'>
+            <h4 id='text-l-marg'>We help make sure you dont forget</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+        </div>
+
 
         </div>
       </div>
