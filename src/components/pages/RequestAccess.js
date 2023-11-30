@@ -98,66 +98,69 @@ return (
     {/* Render the Navigation component */}
     <Navigation></Navigation>
     <div className='reqAccess-container'>
+
+
+      <div className='reqDiv'>
       <h2>Request Access</h2>
       <p>Welcome to chemistree - let's create your account.</p>
+        {/* Input field for first name and last name */}
+        <div className='flex-container'>
+          <div className='first-name'>
+            <label>
+              First Name:
+              <br />
+              <input type="text" value={firstName} onChange={(e) => setFirstName(e.target.value)} />
+            </label>
+          </div>
+          <div className='last-name'>
+            <label>
+              Last Name:
+              <br />
+              <input type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} />
+            </label>
+          </div>
+        </div>
 
-      {/* Input field for first name and last name */}
-      <div className='flex-container'>
-        <div className='first-name'>
+        {/* Input field for email */}
+        <div className='flex-container'>
           <label>
-            First Name:
+            Email:
             <br />
-            <input type="text" value={firstName} onChange={(e) => setFirstName(e.target.value)} />
+            <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} className='email-input'/>
           </label>
         </div>
-        <div className='last-name'>
+
+        {/* Input field for password */}
+        <div className='flex-container'>
           <label>
-            Last Name:
+            Password:
             <br />
-            <input type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} />
+            <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className='password-input'/>
           </label>
         </div>
-      </div>
 
-      {/* Input field for email */}
-      <div className='flex-container'>
-        <label>
-          Email:
-          <br />
-          <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} className='email-input'/>
-        </label>
-      </div>
+        {/* Dropdown for selecting user type */}
+        <div className='flex-container'>
+          <label>
+            User Type:
+            <br />
+            <select value={userType} onChange={(e) => setUserType(e.target.value)} className='usert-input'>
+              <option value="patient">Patient</option>
+              <option value="caregiver">Caregiver</option>
+            </select>
+          </label>
+        </div>
 
-      {/* Input field for password */}
-      <div className='flex-container'>
-        <label>
-          Password:
-          <br />
-          <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className='password-input'/>
-        </label>
-      </div>
+        {/* Button to trigger the handleSignUp function */}
+        <div className='flex-container'>
+          <button type="button" onClick={handleSignUp} className='btn-input'>
+            Request Access
+          </button>
+        </div>
 
-      {/* Dropdown for selecting user type */}
-      <div className='flex-container'>
-        <label>
-          User Type:
-          <br />
-          <select value={userType} onChange={(e) => setUserType(e.target.value)} className='usert-input'>
-            <option value="patient">Patient</option>
-            <option value="caregiver">Caregiver</option>
-          </select>
-        </label>
+        {/* Display an error message if there is an error */}
+        {error && <p style={{ color: 'red' }}>{error}</p>}
       </div>
-
-      {/* Button to trigger the handleSignUp function */}
-      <div className='flex-container'>
-        <button type="button" onClick={handleSignUp} className='btn-input'>
-          Request Access
-        </button>
-      </div>
-
-      {/* Display an error message if there is an error */}
-      {error && <p style={{ color: 'red' }}>{error}</p>}
     </div>
   </div>
 );

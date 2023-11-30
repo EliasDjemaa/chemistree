@@ -1,19 +1,37 @@
 .reqAccess-container {
-    margin-left: 500px;
-    margin-right: 500px;
-    margin-top: 100px;
-    justify-content: space-around;
+
+    width: 100%;
+
+
 }
 
+.reqDiv {
+    justify-content: center;
+    margin-left: 200px;
+    margin-right: 200px;
+
+}
+
+.first-name, .last-name {
+    width: 50%;
+}
+
+
+
 .flex-container {
-    justify-content: space-between;
+    width: 100%;
+    
 }
 
 .flex-container label {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 10px;
+    width: 100%;
+}
+
+.flex-container input {
+    width: 100%;
     
 }
 
@@ -35,43 +53,58 @@
 }
 
 .email-input, .password-input, .usert-input, .btn-input {
-    width: 910px;
+    width: 100%;
     height: 40px;
     border-radius: 29.5px;
 }
 
 .usert-input option {
-    width: 910px;
-    height: 400px;
+    width: 100%;
 }
 
 
 /* Set width for first name and last name input fields */
 .flex-container .first-name input,
 .flex-container .last-name input {
-    width: 400px;
+    width: 60%;
     height: 40px;
     border-radius: 29.5px;
 }
 
+
 /* Media Query for screens smaller than 600px (adjust as needed) */
 @media only screen and (max-width: 600px) {
     .reqAccess-container {
-        margin-left: 20px;
-        margin-right: 20px;
         justify-content: space-around;
+
     }
 
-    .email-input,
-    .password-input,
-    .first-name input,
-    .last-name input {
+    .first-name, .last-name {
         width: 100%;
     }
 
-    .email-input, .password-input, .usert-input, .btn-input {
+    .reqDiv {
+        justify-content: center;
+        margin-left: 50px;
+        margin-right: 50px;
+
+    }
+    
+
+    .first-name input,
+    .last-name input {
+        width: 80px;
+    }
+
+    .email-input,
+    .password-input {
         width: 400px;
+    }
+
+    .email-input, .password-input, .usert-input, .btn-input {
+
         height: 40px;
+        width: 400px;
         border-radius: 29.5px;
     }
 }
